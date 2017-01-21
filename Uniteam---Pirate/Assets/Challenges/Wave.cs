@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wave : Challenge {
 
-    private bool active = true;
+    private bool active;
     private Rigidbody waveBody;
     public float speed;
 
@@ -12,7 +12,8 @@ public class Wave : Challenge {
 	void Start () {
 
         waveBody = GetComponent<Rigidbody>();
-        
+        active = true;
+
     }
 	
 	// Update is called once per frame
