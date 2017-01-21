@@ -7,6 +7,11 @@ TagManager:
   - stairsDown
   - stairsUp
   - Wave
+  - Undamage
+  - Damage
+  - Damageable Hull
+  - Fornace
+  - LookOut
   layers:
   - Default
   - TransparentFX

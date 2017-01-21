@@ -8,7 +8,7 @@ public class LookOut : Challenge {
 
 	// Use this for initialization
 	void Start () {
-		startChallenge();
+		//startChallenge();
 	}
 	
 	// Update is called once per frame
@@ -16,15 +16,15 @@ public class LookOut : Challenge {
 		if(timerIsStarted){
 			reactionTime -= Time.deltaTime;
 			if(reactionTime <= 0.0f){
-				print("Failed!");
+				//print("Failed!");
 				reactionTime = 2.0f;
 				timerIsStarted = false;
 				transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(false);
 				startChallenge();
 			}
 		}
-		
 	}
+
 	public override void startChallenge(){
 		print("it's a GO! for LookOut");
 		buttonToPress = quickEventButton[Random.Range(0,quickEventButton.Length)];
@@ -38,15 +38,19 @@ public class LookOut : Challenge {
 		transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(true);
 	}
 
-	public void buttonPressed(string buttonPressed) {
-		if(buttonPressed == buttonToPress){
-			reactionTime = 2.0f;
-			transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(false);
-			startChallenge();
-		}else{
-			print("Failed!");
-			timerIsStarted = false;
-		}
-	}
+    public void buttonPressed(string buttonPressed)
+    {
+        if (buttonPressed == buttonToPress)
+        {
+            reactionTime = 2.0f;
+            transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(false);
+            startChallenge();
+        }
+        else
+        {
+            //print("Failed!");
+            timerIsStarted = false;
+        }
+    }
 
 }
