@@ -14,6 +14,6 @@ public class Fornace : Challenge {
 		
 	}
 	public override void naming() {
-		print("Je suis une Fournaise");
+		//print("Je suis une Fournaise");
 	}
 }

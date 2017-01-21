@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
 	private bool[] _isPlayerReady;
+    private bool _challengeActive = false;
 
-	[SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject mainMenu;
 
-	 float timeLeft = 60.0f; 
+	 float timeLeft = 5.0f; 
 
 	 public GameObject challenges;
 	 bool gameStarted = false;
@@ -34,26 +35,44 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timeLeft -= Time.deltaTime;
-		if(timeLeft <= 0.0f){
-			startNewChallenge();
-			timeLeft = Random.Range(10,timeLeft-1);
-		}
+        if (gameStarted && !_challengeActive)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft <= 0.0f)
+            {  
+                startNewChallenge();
+                _challengeActive = true;
+                timeLeft = Random.Range(10, timeLeft - 1);
+            }
+        }
 	}
 
 	private void startNewChallenge(){
+        print("START NEW CHALLENGE");
 		print(challenges.transform.childCount);
 		int index = Random.Range(0,challenges.transform.childCount);
-		Transform newChallenge = challenges.transform.GetChild(index);
-
+		//Transform newChallenge = challenges.transform.GetChild(index);
+        Transform newChallenge = challenges.transform.GetChild(1);
+        print(newChallenge.tag);
+        Challenge challengeScript;
 		switch (newChallenge.tag){
 			case "Fornace":
-				//newChallenge.GetComponent<Fornace>().naming();
+                challengeScript = newChallenge.gameObject.GetComponent<Fornace>();
+                print("script challenge " + challengeScript);
+                challengeScript.naming();
 				break;
+            case "LookOut":
+                challengeScript = newChallenge.gameObject.GetComponent<LookOut>();
+                print("script challenge " + challengeScript);
+                challengeScript.startChallenge();
+                break;
 		}
-
-
 	}
+
+    public void SetCanSpawnChallenge(bool value)
+    {
+        _challengeActive = value;
+    }
 
 	public void GameOver() {
 
@@ -63,6 +82,8 @@ public class GameManager : MonoBehaviour {
 		mainMenu.SetActive (false);
 		gameStarted = true;
 	}
+
+
 
 
 	// DE ALEX
