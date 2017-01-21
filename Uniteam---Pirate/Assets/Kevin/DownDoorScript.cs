@@ -21,11 +21,9 @@ public class DownDoorScript : MonoBehaviour {
     {
         Rigidbody playerBody = objectTouched.gameObject.GetComponent<Rigidbody>();
 
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetKeyDown("up"))
         {
             playerBody.position = exit.position;
-
-            exit.gameObject.GetComponent<DownDoorScript>().enabled = false;
         }
     }
 }

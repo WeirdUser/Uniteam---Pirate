@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
 
 		switch (newChallenge.tag){
 			case "Fornace":
-				newChallenge.GetComponent<Fornace>().naming();
+				//newChallenge.GetComponent<Fornace>().naming();
 				break;
 		}
 
