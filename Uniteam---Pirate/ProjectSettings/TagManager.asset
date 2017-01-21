@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - stairsDown
+  - stairsUp
+  - Wave
   - Undamage
   - Damage
   - Damageable Hull
