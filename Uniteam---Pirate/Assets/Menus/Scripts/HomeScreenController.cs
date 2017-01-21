@@ -7,13 +7,22 @@ public class HomeScreenController : MonoBehaviour
 
     public GameObject _playerReadyMenu;
     public GameObject _canvas;
+    public MenuController _menuControllerScript;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (_menuControllerScript.GetIsOpen())
         {
-            _canvas.GetComponent<MenuManager>().changeMenu(_playerReadyMenu);
+            if (Input.anyKeyDown)
+            {
+                _canvas.GetComponent<MenuManager>().ChangeMenu(_playerReadyMenu);
+            }
         }
+    }
+
+    public void Init()
+    {
+        Input.ResetInputAxes();
     }
 }

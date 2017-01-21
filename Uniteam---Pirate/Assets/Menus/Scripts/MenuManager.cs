@@ -11,14 +11,25 @@ public class MenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-       _firstMenu.GetComponent<MenuController>().setIsOpen(true);
+       _firstMenu.GetComponent<MenuController>().SetIsOpen(true);
         _currentMenu = _firstMenu;
 	}
 
-    public void changeMenu(GameObject menu)
+    public void ChangeMenu(GameObject menu)
     {
-        _currentMenu.GetComponent<MenuController>().setIsOpen(false);
+        PlayerReadyController _playerReadyControllerScript = menu.GetComponent<PlayerReadyController>();
+        if (_playerReadyControllerScript != null)
+        {
+            _playerReadyControllerScript.Init();
+        }
+        HomeScreenController _homeScreenControllerScript = menu.GetComponent<HomeScreenController>();
+        if (_homeScreenControllerScript != null)
+        {
+            _homeScreenControllerScript.Init();
+        }
+
+        _currentMenu.GetComponent<MenuController>().SetIsOpen(false);
         _currentMenu = menu;
-        _currentMenu.GetComponent<MenuController>().setIsOpen(true);
+        _currentMenu.GetComponent<MenuController>().SetIsOpen(true);
     }
 }
