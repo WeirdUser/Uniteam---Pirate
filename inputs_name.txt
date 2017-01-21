@@ -1,0 +1,24 @@
+Use these strings for Input.GetAxis() 
+
+E.G : 
+
+if(Input.GetAxis("P1_X") > 0){
+	// Player 1 jumps
+}
+
+
+List for Player 1. For other players, replace P1 by P2, P3 or P4
+
+P1_Horizontal
+P1_Vertical
+P1_Square
+P1_X
+P1_Circle
+P1_Triangle
+P1_L1
+P1_R1
+P1_L2
+P1_R2
+
+If you aren't familiar with the ps4 controller, please visit this link : 
+http://interdimensional.space/wp-content/uploads/2016/01/ps4_controller_mapping.png
