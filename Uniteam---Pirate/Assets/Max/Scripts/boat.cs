@@ -17,9 +17,9 @@ public class boat : MonoBehaviour {
 	private bool gameOver = false;
 
 	void Awake() {
-		Assert.IsNotNull (hull1);
-		Assert.IsNotNull (hull2);
-		Assert.IsNotNull (hull3);
+		//Assert.IsNotNull (hull1);
+		//Assert.IsNotNull (hull2);
+		//Assert.IsNotNull (hull3);
 	}
 	void Start () {
 		undamageHullParts = new List<GameObject>(); 
@@ -43,6 +43,7 @@ public class boat : MonoBehaviour {
 	}
 
 	public void damageHull() {
+        /*
 		if(!gameOver){
 			int index = Random.Range(0,undamageHullParts.Count);
 			undamageHullParts[index].transform.Find("UnDmgHull").gameObject.SetActive(false);
@@ -55,6 +56,7 @@ public class boat : MonoBehaviour {
 				gameOver = true;
 			}
 		}
+        */
 	}
 	public void repairHull(GameObject hullToBeRepaired) {
 		if(!gameOver){

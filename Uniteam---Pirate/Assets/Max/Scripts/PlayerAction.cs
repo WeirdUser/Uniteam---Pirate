@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fornace : Challenge {
+public class PlayerAction : MonoBehaviour {
 
+	public string playerID = "";
 	// Use this for initialization
 	void Start () {
 		
@@ -12,8 +13,5 @@ public class Fornace : Challenge {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-	public override void naming() {
-		//print("Je suis une Fournaise");
 	}
 }
