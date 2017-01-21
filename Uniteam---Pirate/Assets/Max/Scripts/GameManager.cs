@@ -7,24 +7,13 @@ public class GameManager : MonoBehaviour {
 	
 	public static GameManager instance = null;
 	private bool[] _isPlayerReady;
-<<<<<<< HEAD
-
     private bool _challengeActive = false;
 
-=======
-    private bool _challengeActive = false;
-	
->>>>>>> 9f27d2ad50b8fcbf46040f16f45ca79f234fdf4b
 	private GameObject[] tblPlayers = new GameObject[4];
 	[SerializeField] private GameObject player1;
 	[SerializeField] private GameObject player2;
 	[SerializeField] private GameObject player3;
 	[SerializeField] private GameObject player4;
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f27d2ad50b8fcbf46040f16f45ca79f234fdf4b
-
     [SerializeField] private GameObject mainMenu;
 
 	 float timeLeft = 5.0f; 
