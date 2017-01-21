@@ -7,6 +7,7 @@ public class Challenge : MonoBehaviour {
 	protected string[]  quickEventButton = {"XButton","Triangle","Square","Circle"};
 	protected float reactionTime = 2.0f;
     protected GameObject _activePlayer;
+    protected bool _waitForPlayer = false;
 
 	protected bool timerIsStarted = false;
 	// Use this for initialization
@@ -19,6 +20,11 @@ public class Challenge : MonoBehaviour {
 		
 	}
 
+
+    public virtual void waitForPlayer()
+    {
+
+    }
 	public virtual void naming(){
 		print("Je suis un Challenges");
 	}

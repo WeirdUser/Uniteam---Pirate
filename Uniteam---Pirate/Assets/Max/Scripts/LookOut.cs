@@ -8,7 +8,7 @@ public class LookOut : Challenge {
 
 	// Use this for initialization
 	void Start () {
-		//startChallenge();
+        
 	}
 	
 	// Update is called once per frame
@@ -24,6 +24,11 @@ public class LookOut : Challenge {
 			}
 		}
 	}
+
+    public override void waitForPlayer()
+    {
+        _waitForPlayer = true;
+    }
 
 	public override void startChallenge(){
 		print("it's a GO! for LookOut");

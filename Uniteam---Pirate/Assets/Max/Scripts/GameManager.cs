@@ -7,15 +7,15 @@ public class GameManager : MonoBehaviour {
 	
 	public static GameManager instance = null;
 	private bool[] _isPlayerReady;
-<<<<<<< HEAD
+
     private bool _challengeActive = false;
-=======
+
 	private GameObject[] tblPlayers = new GameObject[4];
 	[SerializeField] private GameObject player1;
 	[SerializeField] private GameObject player2;
 	[SerializeField] private GameObject player3;
 	[SerializeField] private GameObject player4;
->>>>>>> b44509929ac93a4d74bfeec48561a54cb0af81af
+
 
     [SerializeField] private GameObject mainMenu;
 
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
             case "LookOut":
                 challengeScript = newChallenge.gameObject.GetComponent<LookOut>();
                 print("script challenge " + challengeScript);
-                challengeScript.startChallenge();
+                challengeScript.waitForPlayer();
                 break;
 		}
 	}
