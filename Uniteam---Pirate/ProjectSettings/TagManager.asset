@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fornace
+  - Damageable Hull
+  - Damage
+  - Undamage
   layers:
   - Default
   - TransparentFX

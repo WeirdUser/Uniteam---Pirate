@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 
 	[SerializeField] private GameObject mainMenu;
-	private bool gameStarted = false;
 
 	 float timeLeft = 60.0f; 
 
 	 public GameObject challenges;
+	 bool gameStarted = false;
 
 	void Awake() {
 		if (instance == null) {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startNewChallenge();
+		//startNewChallenge();
 	}
 	
 	// Update is called once per frame
