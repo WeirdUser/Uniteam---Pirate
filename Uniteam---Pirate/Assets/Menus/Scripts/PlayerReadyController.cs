@@ -15,6 +15,8 @@ public class PlayerReadyController : MonoBehaviour
     public GameObject _homeScreen;
     public MenuController _menuControllerScript;
 
+    public GameManager _gameManager;
+
     // Private
     private bool[] _playerIsReady = new bool[4] { false, false, false, false };
 
@@ -51,8 +53,17 @@ public class PlayerReadyController : MonoBehaviour
 
             if (Input.GetAxis("Options") > 0)
             {
-                MasterGameManager mgm = GameObject.Find("MasterGameManager").GetComponent<MasterGameManager>();
-                mgm.SetIsPlayerReady(_playerIsReady);
+                bool canStartGame = false;
+                for(int i = 0; i < _playerIsReady.Length; i++){
+                    if(_playerIsReady[i]){
+                        canStartGame = true;
+                    }
+                }
+                if(canStartGame){
+                    GameManager _gameManagerScript =_gameManager.gameObject.GetComponent<GameManager>(); 
+                    _gameManagerScript.SetIsPlayerReady(_playerIsReady);
+                    _gameManagerScript.EnterGame();
+                }
             }
         }
     }

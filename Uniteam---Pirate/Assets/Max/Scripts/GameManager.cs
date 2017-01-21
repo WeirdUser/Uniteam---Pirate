@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
+	private bool[] _isPlayerReady;
 
 	[SerializeField] private GameObject mainMenu;
 
@@ -62,4 +63,25 @@ public class GameManager : MonoBehaviour {
 		mainMenu.SetActive (false);
 		gameStarted = true;
 	}
+
+
+	// DE ALEX
+	// SETTERS
+    public void SetIsPlayerReady(bool[] value)
+    {
+        _isPlayerReady = value;
+        for(int i = 0; i<_isPlayerReady.Length; i++)
+        {
+            if (_isPlayerReady[i])
+            {
+                print("Player " + (i + 1) + " is ready.");
+            }
+        }
+    }
+
+    // GETTERS
+    public bool[] GetIsPlayerReady()
+    {
+        return _isPlayerReady;
+    }
 }
