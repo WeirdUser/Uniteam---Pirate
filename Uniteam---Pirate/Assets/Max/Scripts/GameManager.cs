@@ -4,9 +4,14 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 public class GameManager : MonoBehaviour {
-
+	
 	public static GameManager instance = null;
 	private bool[] _isPlayerReady;
+	private GameObject[] tblPlayers = new GameObject[4];
+	[SerializeField] private GameObject player1;
+	[SerializeField] private GameObject player2;
+	[SerializeField] private GameObject player3;
+	[SerializeField] private GameObject player4;
 
 	[SerializeField] private GameObject mainMenu;
 
@@ -25,11 +30,19 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 
 		Assert.IsNotNull (mainMenu);
+		Assert.IsNotNull (player1);
+		Assert.IsNotNull (player2);
+		Assert.IsNotNull (player3);
+		Assert.IsNotNull (player4);
 	}
 
 	// Use this for initialization
 	void Start () {
 		//startNewChallenge();
+		tblPlayers[0] = player1;
+		tblPlayers[1] = player2;
+		tblPlayers[2] = player3;
+		tblPlayers[3] = player4;
 	}
 	
 	// Update is called once per frame
@@ -74,6 +87,7 @@ public class GameManager : MonoBehaviour {
         {
             if (_isPlayerReady[i])
             {
+				tblPlayers[i].SetActive(true);
                 print("Player " + (i + 1) + " is ready.");
             }
         }
