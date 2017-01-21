@@ -445,6 +445,7 @@ MonoBehaviour:
   _P4ConnectedText: {fileID: 577528953}
   _canvas: {fileID: 1004445047}
   _homeScreen: {fileID: 934954873}
+  _menuControllerScript: {fileID: 763489904}
 --- !u!1 &822919221
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +689,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerReadyMenu: {fileID: 763489900}
   _canvas: {fileID: 1004445047}
+  _menuControllerScript: {fileID: 934954877}
+--- !u!1 &962541240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 962541242}
+  - component: {fileID: 962541241}
+  m_Layer: 0
+  m_Name: MasterGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &962541241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 962541240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21c95d8ab90d5d4ab77bf1673b8408c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &962541242
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 962541240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.295511, y: 0.18872926, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003300633
 GameObject:
   m_ObjectHideFlags: 0

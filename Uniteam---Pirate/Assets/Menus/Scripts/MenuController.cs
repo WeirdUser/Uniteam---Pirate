@@ -14,12 +14,12 @@ public class MenuController : MonoBehaviour {
         RectTransform rect = GetComponent<RectTransform>();
         rect.offsetMax = rect.offsetMin = new Vector2(0, 0);
         _canvasGroup = GetComponent<CanvasGroup>();
-        setIsOpen(false);
+        SetIsOpen(false);
     }
 
 
     // SETTERS
-    public void setIsOpen(bool value)
+    public void SetIsOpen(bool value)
     {
         _isOpen = value;
         if (_isOpen)
@@ -36,7 +36,7 @@ public class MenuController : MonoBehaviour {
     }   
 
     // GETTERS
-    public bool getIsOpen()
+    public bool GetIsOpen()
     {
         return _isOpen;
     }
