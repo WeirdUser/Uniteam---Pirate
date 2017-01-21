@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerDetector : MonoBehaviour {
+public class PlayerReadyController : MonoBehaviour
+{
 
     // Public 
     public Text _P1ConnectedText;
     public Text _P2ConnectedText;
     public Text _P3ConnectedText;
     public Text _P4ConnectedText;
+    public GameObject _canvas;
+    public GameObject _homeScreen;
 
     // Private
     private bool[] _playerIsReady = new bool[4] { false, false, false, false };
@@ -37,7 +40,12 @@ public class ControllerDetector : MonoBehaviour {
             _playerIsReady[3] = true;
             _P4ConnectedText.text = "Ready";
         }
-    } 
+
+        if (Input.GetAxis("Cancel") > 0)
+        {
+            _canvas.GetComponent<MenuManager>().changeMenu(_homeScreen);
+        }
+    }
 
     // GETTERS
     public bool[] getPlayerIsReady()
