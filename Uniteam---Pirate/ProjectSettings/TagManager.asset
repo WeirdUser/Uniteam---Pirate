@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-  - Fornace
-  - Damageable Hull
-  - Damage
-  - Undamage
-=======
-  - stairsDown
-  - stairsUp
->>>>>>> 13a7fc33bc4361c2af8e855f8ff6843a37fa40fb
+  tags: []
   layers:
   - Default
   - TransparentFX
