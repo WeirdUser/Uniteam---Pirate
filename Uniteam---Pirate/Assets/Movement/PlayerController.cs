@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
     private bool stunned;
     private float stunTimer;
 
+    private bool isOccupied = false;
+
     public bool braced { get; internal set; }
 
 	// Use this for initialization
@@ -70,5 +72,13 @@ public class PlayerController : MonoBehaviour {
         {
             stunned = true;
         }
+    }
+
+    public bool getIsOccupied(){
+        return isOccupied;
+    }
+
+    public void setIsOccupied(bool _isOccupied){
+        isOccupied = _isOccupied;
     }
 }
