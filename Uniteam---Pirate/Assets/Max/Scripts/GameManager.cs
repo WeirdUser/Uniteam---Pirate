@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 	private bool[] _isPlayerReady;
     private bool _challengeActive = false;
+	
 	private GameObject[] tblPlayers = new GameObject[4];
 	[SerializeField] private GameObject player1;
 	[SerializeField] private GameObject player2;
