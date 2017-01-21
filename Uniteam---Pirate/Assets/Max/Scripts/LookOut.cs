@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LookOut : Challenge {
 
+	private string buttonToPress = "";
+
 	// Use this for initialization
 	void Start () {
 		startChallenge();
@@ -14,16 +16,18 @@ public class LookOut : Challenge {
 		if(timerIsStarted){
 			reactionTime -= Time.deltaTime;
 			if(reactionTime <= 0.0f){
-				startChallenge();
+				print("Failed!");
 				reactionTime = 2.0f;
 				timerIsStarted = false;
+				transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(false);
+				startChallenge();
 			}
 		}
 		
 	}
 	public override void startChallenge(){
 		print("it's a GO! for LookOut");
-		string buttonToPress = quickEventButton[Random.Range(0,quickEventButton.Length)];
+		buttonToPress = quickEventButton[Random.Range(0,quickEventButton.Length)];
 
 		showButton(buttonToPress);
 		timerIsStarted = true;
@@ -32,6 +36,17 @@ public class LookOut : Challenge {
 	public void showButton(string buttonToPress){
 		print(buttonToPress);
 		transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(true);
+	}
+
+	public void buttonPressed(string buttonPressed) {
+		if(buttonPressed == buttonToPress){
+			reactionTime = 2.0f;
+			transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(false);
+			startChallenge();
+		}else{
+			print("Failed!");
+			timerIsStarted = false;
+		}
 	}
 
 }
