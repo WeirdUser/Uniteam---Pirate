@@ -56,5 +56,14 @@ public class boat : MonoBehaviour {
 			}
 		}
 	}
+	public void repairHull(GameObject hullToBeRepaired) {
+		if(!gameOver){
+			int index = damageHullParts.IndexOf(hullToBeRepaired);
+			undamageHullParts[index].transform.Find("DmgHull").gameObject.SetActive(false);
+			undamageHullParts[index].transform.Find("UnDmgHull").gameObject.SetActive(true);
+			undamageHullParts.Add(damageHullParts[index]);
+			damageHullParts.RemoveAt(index);
+		}
+	}
 	
 }
