@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3d28ed6d828518a44961f95fc278acaf
-timeCreated: 1485023320
+guid: 976aaa9d91a82ed4c8df41f0b157bad0
+timeCreated: 1485024202
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -37,48 +37,7 @@ ModelImporter:
     4300006: HandR
     4300008: FootR
     4300010: FootL
-    7400000: Body|CylinderAction
-    7400002: Body|FootLAction
-    7400004: Body|FootRAction
-    7400006: Body|HandLAction
-    7400008: Body|HandRAction
-    7400010: Body|HeadAction
-    7400012: Body|movementAction
-    7400014: Head|CylinderAction
-    7400016: Head|FootLAction
-    7400018: Head|FootRAction
-    7400020: Head|HandLAction
-    7400022: Head|HandRAction
-    7400024: Head|HeadAction
-    7400026: Head|movementAction
-    7400028: HandL|CylinderAction
-    7400030: HandL|FootLAction
-    7400032: HandL|FootRAction
-    7400034: HandL|HandLAction
-    7400036: HandL|HandRAction
-    7400038: HandL|HeadAction
-    7400040: HandL|movementAction
-    7400042: HandR|CylinderAction
-    7400044: HandR|FootLAction
-    7400046: HandR|FootRAction
-    7400048: HandR|HandLAction
-    7400050: HandR|HandRAction
-    7400052: HandR|HeadAction
-    7400054: HandR|movementAction
-    7400056: FootR|CylinderAction
-    7400058: FootR|FootLAction
-    7400060: FootR|FootRAction
-    7400062: FootR|HandLAction
-    7400064: FootR|HandRAction
-    7400066: FootR|HeadAction
-    7400068: FootR|movementAction
-    7400070: FootL|CylinderAction
-    7400072: FootL|FootLAction
-    7400074: FootL|FootRAction
-    7400076: FootL|HandLAction
-    7400078: FootL|HandRAction
-    7400080: FootL|HeadAction
-    7400082: FootL|movementAction
+    7400000: Scene
     9500000: //RootNode
   materials:
     importMaterials: 1
