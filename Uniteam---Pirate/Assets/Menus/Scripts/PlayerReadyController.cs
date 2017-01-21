@@ -14,6 +14,7 @@ public class PlayerReadyController : MonoBehaviour
     public GameObject _canvas;
     public GameObject _homeScreen;
     public MenuController _menuControllerScript;
+    private int cpt = 0;
 
     public GameManager _gameManager;
 
@@ -25,33 +26,50 @@ public class PlayerReadyController : MonoBehaviour
     {
         if (_menuControllerScript.GetIsOpen())
         {
-            if (Input.GetAxis("P1_X") > 0)
+            bool hor = false;
+            bool bx = false;
+            if (Input.GetButtonDown("P1_X"))
+            {
+                bx = true;
+            }
+            if (Input.GetAxis("P1_Horizontal") < 0)
+            {
+                hor = true;
+            }
+
+            if(hor && bx)
+            {
+                cpt++;
+                print(cpt);
+            }
+
+            if (Input.GetButtonDown("P1_X"))
             {
                 _playerIsReady[0] = true;
                 _P1ConnectedText.text = "Ready";
             }
-            if (Input.GetAxis("P2_X") > 0)
+            if (Input.GetButtonDown("P2_X"))
             {
                 _playerIsReady[1] = true;
                 _P2ConnectedText.text = "Ready";
             }
-            if (Input.GetAxis("P3_X") > 0)
+            if (Input.GetButtonDown("P3_X"))
             {
                 _playerIsReady[2] = true;
                 _P3ConnectedText.text = "Ready";
             }
-            if (Input.GetAxis("P4_X") > 0)
+            if (Input.GetButtonDown("P4_X"))
             {
                 _playerIsReady[3] = true;
                 _P4ConnectedText.text = "Ready";
             }
 
-            if (Input.GetAxis("Cancel") > 0)
+            if (Input.GetButtonDown("Cancel"))
             {
                 _canvas.GetComponent<MenuManager>().ChangeMenu(_homeScreen);
             }
 
-            if (Input.GetAxis("Options") > 0)
+            if (Input.GetButtonDown("Options"))
             {
                 bool canStartGame = false;
                 for(int i = 0; i < _playerIsReady.Length; i++){
