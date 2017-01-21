@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b99d7710eacb10f44b3e87b1d79a5e85
-timeCreated: 1485024976
+guid: a1ec4c21e66d6fc44a27bc26b9642d14
+timeCreated: 1485025520
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -37,6 +37,8 @@ ModelImporter:
     4300006: Sphere.002
     4300008: Sphere.001
     4300010: Sphere
+    7400000: Scene
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -99,7 +101,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
