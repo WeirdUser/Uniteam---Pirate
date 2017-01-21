@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public string playerName;
     private Rigidbody playerBody;
     private float speed = 3.0f;
 
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxis("Horizontal"); //playerName + "_
 
         Vector3 movement = new Vector3(0.0f, 0.0f, moveHorizontal);
 
