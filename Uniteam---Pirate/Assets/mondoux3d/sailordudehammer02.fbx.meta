@@ -1,42 +1,49 @@
 fileFormatVersion: 2
-guid: 8e292010d0612a845a664ced815854b8
-timeCreated: 1485036191
+guid: 50c4883ae5bf19c4a824b5742791e287
+timeCreated: 1485046310
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cylinder
-    100002: //RootNode
-    100004: Sphere
-    100006: Sphere.001
-    100008: Sphere.002
-    100010: Sphere.003
-    100012: Sphere.004
-    400000: Cylinder
-    400002: //RootNode
-    400004: Sphere
-    400006: Sphere.001
-    400008: Sphere.002
-    400010: Sphere.003
-    400012: Sphere.004
-    2300000: Cylinder
-    2300002: Sphere
-    2300004: Sphere.001
-    2300006: Sphere.002
-    2300008: Sphere.003
-    2300010: Sphere.004
-    3300000: Cylinder
-    3300002: Sphere
-    3300004: Sphere.001
-    3300006: Sphere.002
-    3300008: Sphere.003
-    3300010: Sphere.004
-    4300000: Cylinder
-    4300002: Sphere.004
-    4300004: Sphere.003
-    4300006: Sphere.002
-    4300008: Sphere.001
-    4300010: Sphere
+    100000: Cube
+    100002: Cylinder
+    100004: FootL
+    100006: FootR
+    100008: HandL
+    100010: HandR
+    100012: Head
+    100014: movement
+    100016: //RootNode
+    400000: Cube
+    400002: Cylinder
+    400004: FootL
+    400006: FootR
+    400008: HandL
+    400010: HandR
+    400012: Head
+    400014: movement
+    400016: //RootNode
+    2300000: Cube
+    2300002: Cylinder
+    2300004: FootL
+    2300006: FootR
+    2300008: HandL
+    2300010: HandR
+    2300012: Head
+    3300000: Cube
+    3300002: Cylinder
+    3300004: FootL
+    3300006: FootR
+    3300008: HandL
+    3300010: HandR
+    3300012: Head
+    4300000: Cube
+    4300002: Cylinder
+    4300004: FootR
+    4300006: FootL
+    4300008: HandR
+    4300010: HandL
+    4300012: Head
     7400000: Scene
     9500000: //RootNode
   materials:
