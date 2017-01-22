@@ -172,7 +172,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395185528}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 1, z: -4}
+  m_LocalPosition: {x: 10, y: 1, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -397,8 +397,8 @@ GameObject:
   - component: {fileID: 661724196}
   - component: {fileID: 661724195}
   - component: {fileID: 661724194}
-  - component: {fileID: 661724198}
   - component: {fileID: 661724199}
+  - component: {fileID: 661724198}
   m_Layer: 0
   m_Name: FurnaceCollider
   m_TagString: Wave
@@ -464,7 +464,7 @@ Transform:
   m_GameObject: {fileID: 661724193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 5}
-  m_LocalScale: {x: 11, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -477,9 +477,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 661724193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e8ccc67fa97c0249a317267d512c215, type: 3}
+  m_Script: {fileID: 11500000, guid: 398e66ebedb75d94787b7f8c2f92cca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!54 &661724199
 Rigidbody:
   m_ObjectHideFlags: 0
