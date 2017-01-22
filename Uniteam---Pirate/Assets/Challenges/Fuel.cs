@@ -56,7 +56,6 @@ public class Fuel : Challenge {
         if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") > 0) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
         {
             player.setIsOccupied(true);
-            player.stopPlayer();
         }
         else if(Input.GetAxisRaw(player.playerName + "_VerticalArrow") < 0)
         {
