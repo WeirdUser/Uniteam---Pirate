@@ -43,20 +43,17 @@ public class boat : MonoBehaviour {
 	}
 
 	public void damageHull() {
-        /*
-		if(!gameOver){
-			int index = Random.Range(0,undamageHullParts.Count);
-			undamageHullParts[index].transform.Find("UnDmgHull").gameObject.SetActive(false);
-			undamageHullParts[index].transform.Find("DmgHull").gameObject.SetActive(true);
-			damageHullParts.Add(undamageHullParts[index]);
-			undamageHullParts.RemoveAt(index);
+        
+		int index = Random.Range(0,undamageHullParts.Count);
+		undamageHullParts[index].transform.Find("UnDmgHull").gameObject.SetActive(false);
+		undamageHullParts[index].transform.Find("DmgHull").gameObject.SetActive(true);
+		damageHullParts.Add(undamageHullParts[index]);
+		undamageHullParts.RemoveAt(index);
 
-			if(damageHullParts.Count == LIFE){
-				print("GameOver");
-				gameOver = true;
-			}
+		if(damageHullParts.Count == LIFE){
+			print("GameOver");
+		    gameOver = true;
 		}
-        */
 	}
 	public void repairHull(GameObject hullToBeRepaired) {
 		if(!gameOver){
