@@ -19,12 +19,15 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject wave;
     [SerializeField] private GameObject rock;
 
-	 float timeLeft = 5.0f; 
+	float timeLeft = 5.0f; 
 
-	 public GameObject challenges;
-
-	 public GameObject lookOut;
-	 bool gameStarted = false;
+	public GameObject challenges;
+    public AudioClip startSound;
+    public AudioClip alerteSound;
+    public AudioClip turbineSound;
+    private AudioSource audioSource;
+	public GameObject lookOut;
+	bool gameStarted = false;
 
 	void Awake() {
 		if (instance == null) {
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
-
+        audioSource = GetComponent<AudioSource>();
 		DontDestroyOnLoad (gameObject);
 
 		Assert.IsNotNull (mainMenu);
@@ -44,7 +47,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startNewChallenge();
+		//startNewChallenge();
 		tblPlayers[0] = player1;
 		tblPlayers[1] = player2;
 		tblPlayers[2] = player3;
@@ -69,9 +72,10 @@ public class GameManager : MonoBehaviour {
         print("START NEW CHALLENGE");
 		int index = Random.Range(0,challenges.transform.childCount);
         Transform newChallenge = challenges.transform.GetChild(index);
-		//lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
+        //lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
+        audioSource.PlayOneShot(alerteSound);
 
-	}
+    }
 
     public void SetCanSpawnChallenge(bool value)
     {
@@ -85,6 +89,10 @@ public class GameManager : MonoBehaviour {
 	public void EnterGame(){
 		mainMenu.SetActive (false);
 		gameStarted = true;
+        audioSource.Play();
+        audioSource.PlayOneShot(startSound);
+        audioSource.PlayOneShot(turbineSound);
+        GameObject.Find("wave").gameObject.GetComponent<Wave>().activate();
 	}
 
 
