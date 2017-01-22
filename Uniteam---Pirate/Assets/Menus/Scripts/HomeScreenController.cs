@@ -8,6 +8,7 @@ public class HomeScreenController : MonoBehaviour
     public GameObject _playerReadyMenu;
     public GameObject _canvas;
     public MenuController _menuControllerScript;
+    public AudioClip _audioClip;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +17,8 @@ public class HomeScreenController : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+                AudioSource audioSource = GetComponent<AudioSource>();
+                audioSource.PlayOneShot(_audioClip, 1f);
                 _canvas.GetComponent<MenuManager>().ChangeMenu(_playerReadyMenu);
             }
         }

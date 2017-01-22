@@ -8,16 +8,18 @@ public class Rock : MonoBehaviour {
     private bool passed;
     private Rigidbody rockBody;
     public float speed;
+    private AudioSource _audioSource;
     public boat ship;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         rockBody = GetComponent<Rigidbody>();
         active = true;
         passed = false;
+        _audioSource = GetComponent<AudioSource>();
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,15 +42,15 @@ public class Rock : MonoBehaviour {
                 active = false;
 
                 rockBody.velocity = Vector3.zero;
-                rockBody.position = new Vector3(-1.0f, 0.0f, 5.0f);
+                rockBody.position = new Vector3(22.43f, -3.78f, 16.22f);
             }
         }
 
     }
-
     public void activate(bool driverPassed)
     {
         active = true;
+        gameObject.SetActive(true);
         this.passed = driverPassed;
     }
 }

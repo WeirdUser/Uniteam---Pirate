@@ -7,12 +7,14 @@ public class Wave : MonoBehaviour {
     private bool active;
     private Rigidbody waveBody;
     public float speed;
+    private AudioSource _audioSource;
 
 	// Use this for initialization
 	void Start () {
 
         waveBody = GetComponent<Rigidbody>();
         active = true;
+        _audioSource = GetComponent<AudioSource>();
 
     }
 	
@@ -30,7 +32,7 @@ public class Wave : MonoBehaviour {
                 active = false;
 
                 waveBody.velocity = Vector3.zero;
-                waveBody.position = new Vector3(-1.0f, 0.0f, 5.0f);
+                waveBody.position = new Vector3(-29.1f, -4.52f, 15.5f);
             }
         }
 
@@ -39,5 +41,8 @@ public class Wave : MonoBehaviour {
     public void activate()
     {
         active = true;
+        AudioClip wave = Resources.Load("Sounds/Waves_0" + Random.Range(1, 5)) as AudioClip;
+        _audioSource.PlayOneShot(wave, 1f);
+        gameObject.SetActive(true);
     }
 }
