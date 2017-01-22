@@ -93,7 +93,6 @@ public class LookOut : Challenge {
 			player.setIsOccupied(true);
 			exclamation.SetActive(false);
 			playerOnStation = true;
-			player.stopPlayer();
 			alreadyUseStation = true;
 			switch (cataName){
 				case "Rock":
@@ -123,7 +122,5 @@ public class LookOut : Challenge {
  
          bubble.SetActive(false);
     }
-
-
 
 }
