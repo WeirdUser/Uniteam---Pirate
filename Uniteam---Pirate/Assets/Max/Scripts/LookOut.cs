@@ -12,7 +12,6 @@ public class LookOut : Challenge {
 	private float timeBlinkingLeft;
 
 	private bool alreadyUseStation = false;
-    public AudioClip _audioClip;
 	private string cataName = "";
 	[SerializeField] private GameObject exclamation;
 	[SerializeField] private GameObject waveBubble;
