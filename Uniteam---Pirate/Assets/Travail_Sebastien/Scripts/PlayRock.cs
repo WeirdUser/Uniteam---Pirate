@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayRock : MonoBehaviour {
 
-    public AudioSource clip;
+    private AudioSource clip;
 
     void Awake()
     {
+        clip = GetComponent<AudioSource>();
         clip.Play();
     }
 }
