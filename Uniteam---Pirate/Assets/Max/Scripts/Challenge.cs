@@ -10,6 +10,8 @@ public class Challenge : MonoBehaviour {
     protected bool _waitForPlayer = false;
 
 	protected bool timerIsStarted = false;
+
+	protected bool playerOnStation = false;
 	// Use this for initialization
 	void Start () {
 		

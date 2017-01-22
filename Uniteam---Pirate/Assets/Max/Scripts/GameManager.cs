@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 	
 	public static GameManager instance = null;
 	private bool[] _isPlayerReady;
+	
     private bool _challengeActive = false;
 
 	private GameObject[] tblPlayers = new GameObject[4];
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour {
 	 float timeLeft = 5.0f; 
 
 	 public GameObject challenges;
+
+	 public GameObject lookOut;
 	 bool gameStarted = false;
 
 	void Awake() {
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//startNewChallenge();
+		startNewChallenge();
 		tblPlayers[0] = player1;
 		tblPlayers[1] = player2;
 		tblPlayers[2] = player3;
@@ -64,22 +67,9 @@ public class GameManager : MonoBehaviour {
         print("START NEW CHALLENGE");
 		print(challenges.transform.childCount);
 		int index = Random.Range(0,challenges.transform.childCount);
-		//Transform newChallenge = challenges.transform.GetChild(index);
-        Transform newChallenge = challenges.transform.GetChild(1);
-        print(newChallenge.tag);
-        Challenge challengeScript;
-		switch (newChallenge.tag){
-			case "Fornace":
-                challengeScript = newChallenge.gameObject.GetComponent<Fornace>();
-                print("script challenge " + challengeScript);
-                challengeScript.naming();
-				break;
-            case "LookOut":
-                challengeScript = newChallenge.gameObject.GetComponent<LookOut>();
-                print("script challenge " + challengeScript);
-                challengeScript.waitForPlayer();
-                break;
-		}
+        Transform newChallenge = challenges.transform.GetChild(index);
+		lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
+
 	}
 
     public void SetCanSpawnChallenge(bool value)

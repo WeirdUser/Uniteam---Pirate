@@ -24,32 +24,34 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if (stunned)
-        {
-            this.GetComponent<CharacterController>().enabled = false;
+        if(!isOccupied){
+            if (stunned)
+            {
+                this.GetComponent<CharacterController>().enabled = false;
 
-            if (stunTimer < 5.0f)
-            {
-                stunTimer += Time.deltaTime;
-            } else
-            {
-                stunned = false;
+                if (stunTimer < 5.0f)
+                {
+                    stunTimer += Time.deltaTime;
+                } else
+                {
+                    stunned = false;
+                }
             }
-        }
-        else if(Input.GetButton(playerName + "_L1") && Input.GetButton(playerName + "_R1") &&
-            Input.GetButton(playerName + "_L2") && Input.GetButton(playerName + "_R2")) // All four triggers are held
-        {
-            braced = true;
-        }
-        else
-        {
-            braced = false;
+            else if(Input.GetButton(playerName + "_L1") && Input.GetButton(playerName + "_R1") &&
+                Input.GetButton(playerName + "_L2") && Input.GetButton(playerName + "_R2")) // All four triggers are held
+            {
+                braced = true;
+            }
+            else
+            {
+                braced = false;
 
-            float moveHorizontal = Input.GetAxis(playerName + "_Horizontal");
+                float moveHorizontal = Input.GetAxis(playerName + "_Horizontal");
 
-            Vector3 movement = new Vector3(0.0f, 0.0f, moveHorizontal);
+                Vector3 movement = new Vector3(0.0f, 0.0f, moveHorizontal);
 
-            playerBody.AddForce(movement * speed);
+                playerBody.AddForce(movement * speed);
+            }
         }
         
         /*
@@ -80,5 +82,12 @@ public class PlayerController : MonoBehaviour {
 
     public void setIsOccupied(bool _isOccupied){
         isOccupied = _isOccupied;
+        print("Ben ouui!");
     }
+
+    public void stopPlayer(){
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+
 }
