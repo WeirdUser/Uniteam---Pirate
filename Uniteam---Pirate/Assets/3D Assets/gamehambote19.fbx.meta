@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 917825b4bc70322419ce6adf41b2f317
+timeCreated: 1485084027
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Boat
+    100002: crowsNest_telescope
+    100004: DmgHull
+    100006: DmgHull.001
+    100008: DmgHull.002
+    100010: Door
+    100012: driver_wheel
+    100014: engineRoom_boiler
+    100016: engineRoom_fuel
+    100018: engineRoom_furnace
+    100020: FuelStation
+    100022: //RootNode
+    100024: net_control
+    100026: net_crane
+    100028: net_handle1
+    100030: net_handle1.001
+    100032: net_net
+    100034: net_rope
+    100036: Pipe
+    100038: Pump
+    100040: Turbine
+    100042: UnDmgHull
+    100044: UnDmgHull.001
+    100046: UnDmgHull.002
+    400000: Boat
+    400002: crowsNest_telescope
+    400004: DmgHull
+    400006: DmgHull.001
+    400008: DmgHull.002
+    400010: Door
+    400012: driver_wheel
+    400014: engineRoom_boiler
+    400016: engineRoom_fuel
+    400018: engineRoom_furnace
+    400020: FuelStation
+    400022: //RootNode
+    400024: net_control
+    400026: net_crane
+    400028: net_handle1
+    400030: net_handle1.001
+    400032: net_net
+    400034: net_rope
+    400036: Pipe
+    400038: Pump
+    400040: Turbine
+    400042: UnDmgHull
+    400044: UnDmgHull.001
+    400046: UnDmgHull.002
+    2300000: Boat
+    2300002: crowsNest_telescope
+    2300004: DmgHull
+    2300006: DmgHull.001
+    2300008: DmgHull.002
+    2300010: Door
+    2300012: driver_wheel
+    2300014: engineRoom_boiler
+    2300016: engineRoom_fuel
+    2300018: engineRoom_furnace
+    2300020: net_control
+    2300022: net_crane
+    2300024: net_handle1
+    2300026: net_handle1.001
+    2300028: net_net
+    2300030: net_rope
+    2300032: UnDmgHull
+    2300034: UnDmgHull.001
+    2300036: UnDmgHull.002
+    3300000: Boat
+    3300002: crowsNest_telescope
+    3300004: DmgHull
+    3300006: DmgHull.001
+    3300008: DmgHull.002
+    3300010: Door
+    3300012: driver_wheel
+    3300014: engineRoom_boiler
+    3300016: engineRoom_fuel
+    3300018: engineRoom_furnace
+    3300020: net_control
+    3300022: net_crane
+    3300024: net_handle1
+    3300026: net_handle1.001
+    3300028: net_net
+    3300030: net_rope
+    3300032: UnDmgHull
+    3300034: UnDmgHull.001
+    3300036: UnDmgHull.002
+    4300000: UnDmgHull.001
+    4300002: DmgHull.001
+    4300004: DmgHull
+    4300006: UnDmgHull
+    4300008: DmgHull.002
+    4300010: UnDmgHull.002
+    4300012: engineRoom_boiler
+    4300014: engineRoom_furnace
+    4300016: engineRoom_fuel
+    4300018: Door
+    4300020: net_control
+    4300022: net_handle1.001
+    4300024: net_handle1
+    4300026: net_net
+    4300028: net_rope
+    4300030: net_crane
+    4300032: crowsNest_telescope
+    4300034: driver_wheel
+    4300036: Boat
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
