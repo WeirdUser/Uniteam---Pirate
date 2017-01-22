@@ -17,11 +17,9 @@ public class UpDoorScript : MonoBehaviour {
 
     void OnTriggerStay(Collider objectTouched)
     {
-        Rigidbody playerBody = objectTouched.gameObject.GetComponent<Rigidbody>();
-
         if (Input.GetAxis(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow") < 0)
         {
-            playerBody.position = exit.position;
+            objectTouched.gameObject.transform.position = exit.position;
         }
     }
 }
