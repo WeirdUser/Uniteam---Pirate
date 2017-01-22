@@ -51,10 +51,21 @@ public class Fuel : Challenge {
 
     void OnTriggerStay(Collider objectTouched)
     {
-        playerName = objectTouched.GetComponent<PlayerController>().playerName;
+        PlayerController player = objectTouched.GetComponent<PlayerController>();
 
-        if (Input.GetAxisRaw(playerName + "_VerticalArrow") > 0) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
+        if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") > 0) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
         {
+            player.setIsOccupied(true);
+            player.stopPlayer();
+        }
+        else if(Input.GetAxisRaw(player.playerName + "_VerticalArrow") < 0)
+        {
+            player.setIsOccupied(false);
+        }
+    }
+}
+
+/*
             if (!axisInUse)
             {
                 bool square = true;
@@ -89,5 +100,4 @@ public class Fuel : Challenge {
         {
             axisInUse = false;
         }
-    }
-}
+ */
