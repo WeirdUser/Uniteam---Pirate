@@ -8,24 +8,42 @@ public class Fuel : Challenge {
     private bool alarmHasPlayed;
     private bool axisInUse;
     private string playerName;
+    private bool isInUse;
 
 	// Use this for initialization
 	void Start () {
         fuelPercent = 100.0f;
         alarmHasPlayed = false;
-	}
+        this.isInUse = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        fuelPercent -= Time.deltaTime * 2;
-
+        
         if(fuelPercent < 30 && !alarmHasPlayed)
         {
+
             playAlarm();
             alarmHasPlayed = true;
 
         }
+
+        if (this.isInUse)
+        {
+            fuelPercent += Time.deltaTime * 4;
+
+            if(fuelPercent >= 100.0f)
+            {
+
+                this.isInUse = false;
+
+            }
+        }
+        else
+        {
+            fuelPercent -= Time.deltaTime * 2;
+        }
+
     }
 
     void playAlarm()
@@ -53,13 +71,20 @@ public class Fuel : Challenge {
     {
         PlayerController player = objectTouched.GetComponent<PlayerController>();
 
-        if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") > 0) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
+        if(fuelPercent >= 100.0f)
+        {
+            player.setIsOccupied(false);
+        }
+
+        if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") > 0 && !this.isInUse) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
         {
             player.setIsOccupied(true);
+            this.isInUse = true;
         }
         else if(Input.GetAxisRaw(player.playerName + "_VerticalArrow") < 0)
         {
             player.setIsOccupied(false);
+            this.isInUse = false;
         }
     }
 }

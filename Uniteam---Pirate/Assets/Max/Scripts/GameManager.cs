@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//startNewChallenge();
 		tblPlayers[0] = player1;
 		tblPlayers[1] = player2;
 		tblPlayers[2] = player3;
@@ -63,7 +62,7 @@ public class GameManager : MonoBehaviour {
             {  
                 startNewChallenge();
                 _challengeActive = true;
-                timeLeft = Random.Range(10, timeLeft - 1);
+				timeLeft = Random.Range(timeLeft/2, (timeLeft<=20.0f)?(timeLeft - 1):20);
             }
         }
 	}
@@ -72,8 +71,16 @@ public class GameManager : MonoBehaviour {
         print("START NEW CHALLENGE");
 		int index = Random.Range(0,challenges.transform.childCount);
         Transform newChallenge = challenges.transform.GetChild(index);
-        //lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
         audioSource.PlayOneShot(alerteSound);
+		lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
+
+		if(index == 0){
+			print("wave");
+			StartCoroutine(waitWait("Wave"));
+		}else{
+			StartCoroutine(waitWait("Rock"));
+
+		}
 
     }
 
@@ -119,8 +126,14 @@ public class GameManager : MonoBehaviour {
         return _isPlayerReady;
     }	
 
-	IEnumerator waitWait(GameObject bubble) {       
-		yield return new WaitForSeconds (10.0f);
- 
+	IEnumerator waitWait(string nameCata) {       
+		yield return new WaitForSeconds (10.0f);		
+        _challengeActive = false;
+		print("Wave incomming!");
+		if(nameCata == "Wave"){
+			wave.GetComponent<Wave>().activate(); 
+		}else {
+			rock.GetComponent<Rock>().activate(true); 
+		}
     }
 }
