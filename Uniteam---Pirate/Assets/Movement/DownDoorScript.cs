@@ -6,11 +6,12 @@ public class DownDoorScript : MonoBehaviour {
 
     public Transform exit;
     private float timer;
+    private bool axisInUse;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        axisInUse = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,9 +22,17 @@ public class DownDoorScript : MonoBehaviour {
     {
         Rigidbody playerBody = objectTouched.gameObject.GetComponent<Rigidbody>();
 
-        if (Input.GetKeyDown("up"))
+        if (Input.GetAxisRaw(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow") > 0) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
         {
-            playerBody.position = exit.position;
+            if (!axisInUse)
+            {
+                playerBody.position = exit.position;
+                axisInUse = true;
+            }
+        }
+        if(Input.GetAxisRaw(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow") == 0)
+        {
+            axisInUse = false;
         }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Damageable Hull
   - Fornace
   - LookOut
+  - Rock
   layers:
   - Default
   - TransparentFX
