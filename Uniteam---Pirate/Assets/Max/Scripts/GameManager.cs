@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour {
 		print(challenges.transform.childCount);
 		int index = Random.Range(0,challenges.transform.childCount);
         Transform newChallenge = challenges.transform.GetChild(index);
-		lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
+		//lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
 
 	}
 

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class UpDoorScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    public Transform exit;
+
+    // Use this for initialization
+    void Start () {
 	}
 	
 	// Update is called once per frame
@@ -18,9 +19,9 @@ public class UpDoorScript : MonoBehaviour {
     {
         Rigidbody playerBody = objectTouched.gameObject.GetComponent<Rigidbody>();
 
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetAxis(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow") < 0)
         {
-            playerBody.position.Set(playerBody.position.x, playerBody.position.y + 2.0f, playerBody.position.z);
+            playerBody.position = exit.position;
         }
     }
 }

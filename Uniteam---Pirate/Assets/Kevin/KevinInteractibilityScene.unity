@@ -437,6 +437,23 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!1 &223915771 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1027639949060778, guid: 0c02c4801097cf54c82d0ef7478cf310,
+    type: 2}
+  m_PrefabInternal: {fileID: 1898891290}
+--- !u!114 &223915772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 223915771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d6c623a0563b9478709a026f25b258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exit: {fileID: 1447222580}
 --- !u!1001 &232904122
 Prefab:
   m_ObjectHideFlags: 0
@@ -485,7 +502,8 @@ Prefab:
       propertyPath: m_Name
       value: UpperDoor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114508636954966870, guid: 0c02c4801097cf54c82d0ef7478cf310, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0c02c4801097cf54c82d0ef7478cf310, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &232904123 stripped
@@ -968,6 +986,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42bf70177d782b3498f16524915c6747, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &372263981 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775033287013508, guid: 42bf70177d782b3498f16524915c6747,
+    type: 2}
+  m_PrefabInternal: {fileID: 372263980}
 --- !u!1 &390129909 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1875976371018722, guid: 705a7e3d365ca1d41800b69bd9f1d3be,
@@ -1125,6 +1148,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42bf70177d782b3498f16524915c6747, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &470215366 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775033287013508, guid: 42bf70177d782b3498f16524915c6747,
+    type: 2}
+  m_PrefabInternal: {fileID: 470215365}
 --- !u!1001 &485829763
 Prefab:
   m_ObjectHideFlags: 0
@@ -1667,9 +1695,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 674144070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005c1d769b95c674b8f3a1e23a812f11, type: 3}
+  m_Script: {fileID: 11500000, guid: b52c24b8dd981694c9f830d4c22ada11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 1038581897}
+  player2: {fileID: 372263981}
+  player3: {fileID: 1183462051}
+  player4: {fileID: 470215366}
+  mainMenu: {fileID: 73235512}
+  challenges: {fileID: 460688003}
+  lookOut: {fileID: 1218117594}
 --- !u!1 &690370576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,6 +2322,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42bf70177d782b3498f16524915c6747, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1038581897 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775033287013508, guid: 42bf70177d782b3498f16524915c6747,
+    type: 2}
+  m_PrefabInternal: {fileID: 1038581896}
 --- !u!1 &1052778229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2442,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42bf70177d782b3498f16524915c6747, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1183462051 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775033287013508, guid: 42bf70177d782b3498f16524915c6747,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183462050}
 --- !u!1 &1218117594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,6 +3386,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1741980702}
+--- !u!1 &1789864455 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1027639949060778, guid: 0c02c4801097cf54c82d0ef7478cf310,
+    type: 2}
+  m_PrefabInternal: {fileID: 232904122}
+--- !u!114 &1789864456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789864455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d6c623a0563b9478709a026f25b258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exit: {fileID: 396768424}
 --- !u!1 &1812514723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3627,7 +3689,8 @@ Prefab:
       propertyPath: m_Name
       value: UpperDoor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114508636954966870, guid: 0c02c4801097cf54c82d0ef7478cf310, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0c02c4801097cf54c82d0ef7478cf310, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1898891291 stripped
