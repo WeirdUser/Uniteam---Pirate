@@ -30,14 +30,15 @@ public class Wave : MonoBehaviour {
                 active = false;
 
                 waveBody.velocity = Vector3.zero;
-                waveBody.position = new Vector3(-1.0f, 0.0f, 5.0f);
+                waveBody.position = new Vector3(-29.1f, -4.52f, 15.5f);
             }
         }
 
 	}
 
-    void activate()
+    public void activate()
     {
         active = true;
+        gameObject.SetActive(true);
     }
 }

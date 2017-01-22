@@ -38,14 +38,15 @@ public class Rock : MonoBehaviour {
                 active = false;
 
                 rockBody.velocity = Vector3.zero;
-                rockBody.position = new Vector3(-1.0f, 0.0f, 5.0f);
+                rockBody.position = new Vector3(22.43f, -3.78f, 16.22f);
             }
         }
 
     }
 
-    void activate()
+    public void activate()
     {
         active = true;
+        gameObject.SetActive(true);
     }
 }
