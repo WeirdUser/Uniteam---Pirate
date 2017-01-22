@@ -8,16 +8,18 @@ public class Rock : MonoBehaviour {
     private bool passed;
     private Rigidbody rockBody;
     public float speed;
+    private AudioSource _audioSource;
     public boat ship;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         rockBody = GetComponent<Rigidbody>();
         active = true;
         passed = false;
+        _audioSource = GetComponent<AudioSource>();
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,8 +47,6 @@ public class Rock : MonoBehaviour {
         }
 
     }
-
-<<<<<<< HEAD
     public void activate(bool driverPassed)
     {
         active = true;

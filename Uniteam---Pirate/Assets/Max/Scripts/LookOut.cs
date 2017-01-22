@@ -12,7 +12,7 @@ public class LookOut : Challenge {
 	private float timeBlinkingLeft;
 
 	private bool alreadyUseStation = false;
-
+    public AudioClip _audioClip;
 	private string cataName = "";
 	[SerializeField] private GameObject exclamation;
 	[SerializeField] private GameObject waveBubble;
@@ -86,6 +86,13 @@ public class LookOut : Challenge {
 		isComming = true;
 		cataName = catastropheName;
 	}
+
+    void OnTriggerEnter(Collider objectTouched)
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        AudioClip voice = Resources.Load("Sounds/Vigie_0" + Random.Range(1, 6)) as AudioClip;
+        audioSource.PlayOneShot(voice, 1f);
+    }
 
 	void OnTriggerStay(Collider objectTouched){
 		PlayerController player = objectTouched.GetComponent<PlayerController>();

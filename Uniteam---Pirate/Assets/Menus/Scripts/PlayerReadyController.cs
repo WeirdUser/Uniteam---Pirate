@@ -15,12 +15,17 @@ public class PlayerReadyController : MonoBehaviour
     public GameObject _homeScreen;
     public MenuController _menuControllerScript;
     private int cpt = 0;
+    public AudioClip _audioClip;
 
     public GameManager _gameManager;
-
+    private AudioSource audioSource;
     // Private
     private bool[] _playerIsReady = new bool[4] { false, false, false, false };
 
+    void Start()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -80,7 +85,10 @@ public class PlayerReadyController : MonoBehaviour
                 if(canStartGame){
                     GameManager _gameManagerScript =_gameManager.gameObject.GetComponent<GameManager>(); 
                     _gameManagerScript.SetIsPlayerReady(_playerIsReady);
+                    AudioSource audioSource = GetComponent<AudioSource>();
+                    audioSource.PlayOneShot(_audioClip, 1f);
                     _gameManagerScript.EnterGame();
+                    
                 }
             }
         }

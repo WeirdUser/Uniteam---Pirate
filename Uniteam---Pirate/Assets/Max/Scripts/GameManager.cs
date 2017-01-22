@@ -19,12 +19,15 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject wave;
     [SerializeField] private GameObject rock;
 
-	 float timeLeft = 5.0f; 
+	float timeLeft = 5.0f; 
 
-	 public GameObject challenges;
-
-	 public GameObject lookOut;
-	 bool gameStarted = false;
+	public GameObject challenges;
+    public AudioClip startSound;
+    public AudioClip alerteSound;
+    public AudioClip turbineSound;
+    private AudioSource audioSource;
+	public GameObject lookOut;
+	bool gameStarted = false;
 
 	void Awake() {
 		if (instance == null) {
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
-
+        audioSource = GetComponent<AudioSource>();
 		DontDestroyOnLoad (gameObject);
 
 		Assert.IsNotNull (mainMenu);
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour {
         print("START NEW CHALLENGE");
 		int index = Random.Range(0,challenges.transform.childCount);
         Transform newChallenge = challenges.transform.GetChild(index);
+        audioSource.PlayOneShot(alerteSound);
 		lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
 
 		if(index == 0){
@@ -78,7 +82,7 @@ public class GameManager : MonoBehaviour {
 
 		}
 
-	}
+    }
 
     public void SetCanSpawnChallenge(bool value)
     {
@@ -92,6 +96,10 @@ public class GameManager : MonoBehaviour {
 	public void EnterGame(){
 		mainMenu.SetActive (false);
 		gameStarted = true;
+        audioSource.Play();
+        audioSource.PlayOneShot(startSound);
+        audioSource.PlayOneShot(turbineSound);
+        GameObject.Find("wave").gameObject.GetComponent<Wave>().activate();
 	}
 
 
@@ -125,7 +133,7 @@ public class GameManager : MonoBehaviour {
 		if(nameCata == "Wave"){
 			wave.GetComponent<Wave>().activate(); 
 		}else {
-			rock.GetComponent<Rock>().activate(); 
+			rock.GetComponent<Rock>().activate(true); 
 		}
     }
 }
