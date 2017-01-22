@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour {
 
 	private void startNewChallenge(){
         print("START NEW CHALLENGE");
-		print(challenges.transform.childCount);
 		int index = Random.Range(0,challenges.transform.childCount);
         Transform newChallenge = challenges.transform.GetChild(index);
 		lookOut.GetComponent<LookOut>().startEvent(newChallenge.tag);
@@ -108,5 +107,10 @@ public class GameManager : MonoBehaviour {
     public bool[] GetIsPlayerReady()
     {
         return _isPlayerReady;
+    }	
+
+	IEnumerator waitWait(GameObject bubble) {       
+		yield return new WaitForSeconds (10.0f);
+ 
     }
 }
