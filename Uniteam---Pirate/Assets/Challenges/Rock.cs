@@ -8,6 +8,7 @@ public class Rock : MonoBehaviour {
     private bool passed;
     private Rigidbody rockBody;
     public float speed;
+    public boat ship;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class Rock : MonoBehaviour {
             if (!passed)
             {
                 movement = new Vector3(0.0f, 0.0f, -1.0f);
+                ship.damageHull();
             } else
             {
                 movement = new Vector3(0.5f, 0.0f, -1.0f);
@@ -44,8 +46,9 @@ public class Rock : MonoBehaviour {
 
     }
 
-    void activate()
+    public void activate(bool driverPassed)
     {
         active = true;
+        this.passed = driverPassed;
     }
 }
