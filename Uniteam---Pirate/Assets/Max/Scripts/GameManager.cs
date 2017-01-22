@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] private GameObject player3;
 	[SerializeField] private GameObject player4;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject wave;
+    [SerializeField] private GameObject rock;
 
 	 float timeLeft = 5.0f; 
 
