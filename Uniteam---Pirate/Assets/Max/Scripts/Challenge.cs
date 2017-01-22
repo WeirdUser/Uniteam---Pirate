@@ -12,6 +12,7 @@ public class Challenge : MonoBehaviour {
 	protected bool timerIsStarted = false;
 
 	protected bool playerOnStation = false;
+	[SerializeField] protected GameObject arrowUp;
 	// Use this for initialization
 	void Start () {
 		
@@ -32,5 +33,14 @@ public class Challenge : MonoBehaviour {
 	}
 	public virtual void startChallenge(){
 		//print("it's a GO!");
+	}	
+
+	void OnTriggerEnter(){
+		arrowUp.gameObject.SetActive(true);
 	}
+
+	void OnTriggerExit(){
+		arrowUp.gameObject.SetActive(false);
+	}
+
 }
