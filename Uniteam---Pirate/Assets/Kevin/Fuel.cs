@@ -33,34 +33,7 @@ public class Fuel : Challenge {
         //Play alarm sound here.
         print(fuelPercent);
     }
-
-    void refuel()
-    {
-        bool square = true;
-        bool circle = false;
-        while (fuelPercent < 100.0f)
-        {
-            if (square)
-            {
-                showButton("Square");
-            } else
-            {
-                showButton("Circle");
-            }
-
-
-            if((Input.GetButtonDown(playerName + "_Square") && square)
-                || (Input.GetButtonDown(playerName + "_Circle") && circle))
-            {
-                fuelPercent += 5.0f;
-                print(fuelPercent);
-                square = !square;
-                circle = !circle;
-            }
-
-        }
-    }
-
+    
     public void showButton(string nextButton)
     {
         print(nextButton);
@@ -84,7 +57,31 @@ public class Fuel : Challenge {
         {
             if (!axisInUse)
             {
-                refuel();
+                bool square = true;
+                bool circle = false;
+                if (fuelPercent < 100.0f)
+                {
+                    if (square)
+                    {
+                        showButton("Square");
+                    }
+                    else
+                    {
+                        showButton("Circle");
+                    }
+
+
+                    if ((Input.GetButtonDown(playerName + "_Square") && square)
+                        || (Input.GetButtonDown(playerName + "_Circle") && circle))
+                    {
+                        fuelPercent += 5.0f;
+                        print(fuelPercent);
+                        square = !square;
+                        circle = !circle;
+                    }
+
+                }
+
                 axisInUse = true;
             }
         }
