@@ -50,7 +50,11 @@ public class PlayerController : MonoBehaviour {
 
                 Vector3 movement = new Vector3(0.0f, 0.0f, moveHorizontal);
 
+                print(moveHorizontal);
+
                 playerBody.AddForce(movement * speed);
+
+                
             }
         }
         
