@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wave : Challenge {
+public class Wave : MonoBehaviour {
 
     private bool active;
     private Rigidbody waveBody;
