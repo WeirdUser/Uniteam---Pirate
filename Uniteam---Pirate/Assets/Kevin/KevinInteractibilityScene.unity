@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657683, g: 0.49641192, b: 0.5748182, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657755, g: 0.4964127, b: 0.57481825, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2315,6 +2315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f35255170fa08459fe082bfc81f7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowUp: {fileID: 0}
 --- !u!23 &1035623240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2581,6 +2582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40f897c9de27bb4a8c5020c94a0d4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowUp: {fileID: 0}
+  blinkingSpeed: 0.5
+  exclamation: {fileID: 0}
+  waveBubble: {fileID: 0}
+  rockBubble: {fileID: 0}
 --- !u!1001 &1224396917
 Prefab:
   m_ObjectHideFlags: 0
@@ -3249,6 +3255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69291f9217f83284ca9449162fd2e3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowUp: {fileID: 0}
 --- !u!1 &1661073732
 GameObject:
   m_ObjectHideFlags: 0
