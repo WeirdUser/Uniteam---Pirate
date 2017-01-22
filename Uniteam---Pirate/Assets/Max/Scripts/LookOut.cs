@@ -6,9 +6,21 @@ public class LookOut : Challenge {
 
 	private string buttonToPress = "";
 
+	private bool isComming = false;
+
+	[SerializeField] private float blinkingSpeed = 0.5f;
+	private float timeBlinkingLeft;
+
+	private bool alreadyUseStation = false;
+
+	private string cataName = "";
+	[SerializeField] private GameObject exclamation;
+	[SerializeField] private GameObject waveBubble;
+	[SerializeField] private GameObject rockBubble;
+
 	// Use this for initialization
 	void Start () {
-        
+        timeBlinkingLeft = blinkingSpeed;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +33,18 @@ public class LookOut : Challenge {
 				timerIsStarted = false;
 				transform.Find("QuickEvent").Find(buttonToPress).gameObject.SetActive(false);
 				startChallenge();
+			}
+		}
+
+		if(isComming && !alreadyUseStation) {
+			timeBlinkingLeft -= Time.deltaTime;
+			if(timeBlinkingLeft <= 0.0f){
+				if(exclamation.active){
+					exclamation.SetActive(false);
+				}else {
+					exclamation.SetActive(true);
+				}
+				timeBlinkingLeft = blinkingSpeed;
 			}
 		}
 	}
@@ -56,6 +80,47 @@ public class LookOut : Challenge {
             //print("Failed!");
             timerIsStarted = false;
         }
+    }
+
+	public void startEvent(string catastropheName) {
+		isComming = true;
+		cataName = catastropheName;
+	}
+
+	void OnTriggerStay(Collider objectTouched){
+		PlayerController player = objectTouched.GetComponent<PlayerController>();
+		if(Input.GetAxis(player.playerName + "_VerticalArrow") > 0 && !player.getIsOccupied()){
+			player.setIsOccupied(true);
+			exclamation.SetActive(false);
+			playerOnStation = true;
+			alreadyUseStation = true;
+			switch (cataName){
+				case "Rock":
+					rockBubble.gameObject.SetActive(true);	
+					StartCoroutine(waitForIt(rockBubble.gameObject));
+				break;
+				case "Wave":	
+					waveBubble.gameObject.SetActive(true);
+					StartCoroutine(waitForIt(waveBubble.gameObject));
+				break;
+				
+			}
+		} else if(player.getIsOccupied() && Input.GetAxis(player.playerName + "_VerticalArrow") > 0){
+			player.setIsOccupied(false);
+			playerOnStation = false;
+		}
+
+
+	}
+
+	public void startQuickEvent(){
+
+	}
+
+	IEnumerator waitForIt(GameObject bubble) {       
+		yield return new WaitForSeconds (2.0f);
+ 
+         bubble.SetActive(false);
     }
 
 }
