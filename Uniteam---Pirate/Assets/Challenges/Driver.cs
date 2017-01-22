@@ -25,12 +25,12 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Update () {
 
         if (active)
-        {
+        {/*
             if (lookout.passed)
             {
                 stationTimer *= 2;
             }
-
+            */
             if (this.isInUse)
             {
                 stationTimer -= Time.deltaTime * (speed * 2);
@@ -70,7 +70,7 @@ public class NewBehaviourScript : MonoBehaviour {
         if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") > 0.0f) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
         {
             player.setIsOccupied(true);
-            player.stopPlayer();
+            //player.stopPlayer();
             this.isInUse = true;
         }
         else if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") < 0.0f)

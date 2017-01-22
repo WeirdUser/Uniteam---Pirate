@@ -58,7 +58,7 @@ public class Repair : MonoBehaviour {
         if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") > 0.0f && !this.isInUse) // Input.GetButtonDown(objectTouched.GetComponent<PlayerController>().playerName + "_VerticalArrow")) &&
         {
             player.setIsOccupied(true);
-            player.stopPlayer();
+            //player.stopPlayer();
             this.isInUse = true;
         }
         else if (Input.GetAxisRaw(player.playerName + "_VerticalArrow") < 0.0f)

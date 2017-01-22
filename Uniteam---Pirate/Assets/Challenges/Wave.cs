@@ -36,7 +36,7 @@ public class Wave : MonoBehaviour {
 
 	}
 
-    void activate()
+    public void activate()
     {
         active = true;
     }
